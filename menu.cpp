@@ -9,7 +9,7 @@ using namespace std;
 int menu(ifstream &file)
 {
 	int a = -1;
-	cout << "Select" << endl << "1. Search song" << endl << "2. Add song\n3. Remove song\n4. Show chords\n0.Exit" << endl;
+	cout << "Select" << endl << "1. Search song" << endl << "2. Add song\n3. Remove song\n4. Show chords\n5.transpose\n6. Clear screen\n0.Exit" << endl;
 	cin >> a;
 	try //нельзя допустить ввод других символов, кроме указанных
 	{
@@ -26,7 +26,7 @@ int menu(ifstream &file)
 	}
 	switch (a)
 	{
-	case 1: 
+	case 1:
 		search(file);//функция поиска песни
 		break;
 	case 2:
@@ -38,6 +38,12 @@ int menu(ifstream &file)
 	case 4:
 		show();//функция показа аккордов
 		break;
+	case 5:
+		transpose();
+		break;
+	case 6:
+		clearscreen();
+		break;
 	case 0:
 		return false;
 
@@ -45,7 +51,7 @@ int menu(ifstream &file)
 		break;
 	}
 
-	
+
 	//system("pause");
 	return true;
 }
